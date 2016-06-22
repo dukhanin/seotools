@@ -4,8 +4,8 @@ if ( !function_exists('st_set_marker') )
 {
     function st_set_marker()
     {
-        setcookie('show_me_the_money', 1, time() + (3600 * 24 * 7), '/');
-        $_COOKIE['show_me_the_money'] = 1;
+        setcookie('st_show_me_the_money', 1, time() + (3600 * 24 * 7), '/');
+        $_COOKIE['st_show_me_the_money'] = 1;
     }
 }
 
@@ -13,7 +13,7 @@ if ( !function_exists('st_auto_marker') )
 {
     function st_auto_marker()
     {
-        if ( @$_GET['show_me_the_money'] )
+        if ( @$_GET['st_show_me_the_money'] )
         {
             st_set_marker();
         }
@@ -24,7 +24,7 @@ if ( !function_exists('st_is_marker') )
 {
     function st_is_marker()
     {
-        return (bool)$_COOKIE['show_me_the_money'];
+        return (bool)$_COOKIE['st_show_me_the_money'];
     }
 }
 
